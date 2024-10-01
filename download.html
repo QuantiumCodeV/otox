@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="fav.ico" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#111111" />
+    <title>Otox</title>
+    <link
+      rel="preload"
+      href="fonts/SFProText-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/SFProText-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/SFNSCondensed-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/SFNSCondensed-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/SFNSCondensed-Heavy.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/Inter-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/pricing.css" />
+    <script defer="defer" src="js/main.js"></script>
+    <script src="js/jquery-3.6.3.js"></script>
+    <script defer="defer" src="js/api.js"></script>
+    <script defer="defer" src="js/pricing_js.js"></script>
+
+    <!-- Smartsupp Live Chat script -->
+    <script type="text/javascript">
+      var _smartsupp = _smartsupp || {};
+      _smartsupp.key = "ffde4136b9b1b8b8a816964811e3264b90470878";
+      window.smartsupp ||
+        (function (d) {
+          var s,
+            c,
+            o = (smartsupp = function () {
+              o._.push(arguments);
+            });
+          o._ = [];
+          s = d.getElementsByTagName("script")[0];
+          c = d.createElement("script");
+          c.type = "text/javascript";
+          c.charset = "utf-8";
+          c.async = true;
+          c.src = "https://www.smartsuppchat.com/loader.js?";
+          s.parentNode.insertBefore(c, s);
+        })(document);
+    </script>
+  </head>
+  <body class="page__body avtoriz">
+    <!-- ЕСЛИ ЧЕЛОВЕК АВТОРИЗОВАЛСЯ ТО ДОБАВЛЯЕТСЯ К BODY класс avtoriz -->
+
+    <!-- 
+    ДЛЯ ВЫСВЕИВАНИЯ ОШИБКИ ДОБАВЛЯМ КЛАСС .modal_login_failed К modal_login  -->
+
+    <div class="modal_new" id="modal_login">
+      <div class="modal_overlay">
+        <div class="modal_rect modal_login">
+          <div class="modal_rect_content">
+            <img src="./img/modal/close.svg" alt="" class="modal_rect_close" />
+            <p class="modal_rect_tittle">Log In</p>
+            <p class="modal_rect_subtittle">Login to your account</p>
+            <div class="modal_rect_blocks">
+              <div class="modal_rect_block">
+                <div class="modal_rect_block_content">
+                  <p class="modal_rect_block_tittle">E-mail</p>
+                  <input
+                    type="text"
+                    placeholder="example@clore.com"
+                    class="modal_rect_block_input"
+                  />
+                </div>
+              </div>
+              <div class="modal_rect_block">
+                <div class="modal_rect_block_content">
+                  <p class="modal_rect_block_tittle">Password</p>
+                  <input
+                    type="password"
+                    placeholder="*************"
+                    class="modal_rect_block_input modal_input_pass"
+                  />
+                  <img
+                    src="./img/modal/yeyes.svg"
+                    alt=""
+                    class="modal_rect_block_eyes"
+                  />
+                </div>
+              </div>
+            </div>
+            <p class="modal_rect_bottom_text_error">
+              Incorrect password or email
+            </p>
+            <p class="modal_rect_bottom_text">
+              Don’t have account?
+              <span class="open-modal" data-modal_login="#modal_registration"
+                >Register</span
+              >
+            </p>
+            <button class="modal_rect_bottom_button">Log In</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal_new" id="modal_registration">
+      <div class="modal_overlay">
+        <div class="modal_rect modal_registration">
+          <div class="modal_rect_content">
+            <img src="./img/modal/close.svg" alt="" class="modal_rect_close" />
+            <p class="modal_rect_tittle">Registration</p>
+            <p class="modal_rect_subtittle">Create new account</p>
+            <div class="modal_rect_blocks">
+              <div class="modal_rect_block">
+                <div class="modal_rect_block_content">
+                  <p class="modal_rect_block_tittle">Username</p>
+                  <input
+                    type="text"
+                    placeholder="Clore"
+                    class="modal_rect_block_input"
+                  />
+                </div>
+              </div>
+              <div class="modal_rect_block">
+                <div class="modal_rect_block_content">
+                  <p class="modal_rect_block_tittle">E-mail</p>
+                  <input
+                    type="text"
+                    placeholder="example@clore.com"
+                    class="modal_rect_block_input"
+                  />
+                </div>
+              </div>
+              <div class="modal_rect_block">
+                <div class="modal_rect_block_content">
+                  <p class="modal_rect_block_tittle">Password</p>
+                  <input
+                    type="password"
+                    placeholder="*************"
+                    class="modal_rect_block_input modal_input_pass"
+                  />
+                  <img
+                    src="./img/modal/yeyes.svg"
+                    alt=""
+                    class="modal_rect_block_eyes"
+                  />
+                </div>
+              </div>
+              <div class="modal_rect_block">
+                <div class="modal_rect_block_content">
+                  <p class="modal_rect_block_tittle">Repeat Password</p>
+                  <input
+                    type="password"
+                    placeholder="*************"
+                    class="modal_rect_block_input modal_input_pass2"
+                  />
+                  <img
+                    src="./img/modal/yeyes.svg"
+                    alt=""
+                    class="modal_rect_block_eyes modal_rect_block_eyes2"
+                  />
+                </div>
+              </div>
+              <p class="modal_rect_bottom_text_error">
+                Incorrect password or email
+              </p>
+              <p class="modal_rect_bottom_text">
+                Already have account?
+                <span class="open-modal" data-modal_login="#modal_login"
+                  >Log In</span
+                >
+              </p>
+              <button class="modal_rect_bottom_button">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal_new" id="modal_join">
+      <div class="modal_overlay">
+        <div class="modal_rect modal_join">
+          <div class="modal_rect_content">
+            <img src="./img/modal/close.svg" alt="" class="modal_rect_close" />
+            <p class="modal_rect_tittle">Joining the сall</p>
+            <p class="modal_rect_subtittle">Open the Otox app</p>
+            <div class="modal_join_items">
+              <p class="modal_join_item">
+                Click <span>“Open Otox app”</span> in the dialog box in your
+                browser
+              </p>
+              <p class="modal_join_item">
+                If the dialog box does not appear, make sure you have the
+                <a href="">Otox app </a> installed and click
+                <span>"Start"</span> a conference below.
+              </p>
+              <p class="modal_join_item">
+                Don't have the Otox app yet?
+                <a id="join-download-link" download href="./fav.ico"
+                  >Download now</a
+                >
+              </p>
+              <p id="message"></p>
+            </div>
+            <button class="modal_join_button">Start</button>
+            <p class="modal_join_bottom">
+              By joining the meeting, you agree to the
+              <a href="">Terms of Service </a> and <a href="">Privacy Policy</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal_new" id="modal_delete">
+      <div class="modal_overlay">
+        <div class="modal_rect modal_delete">
+          <div class="modal_rect_content">
+            <img src="./img/modal/close.svg" alt="" class="modal_rect_close" />
+            <p class="modal_rect_tittle">Delete account</p>
+            <p class="modal_rect_subtittle">
+              Are you sure you want to delete your account? This action is
+              irreversible and recovery will be impossible
+            </p>
+            <div class="modal_delete_rect_button">Delete Account</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal_new" id="modal_setting">
+      <div class="modal_overlay">
+        <div class="modal_rect modal_setting">
+          <div class="modal_rect_content">
+            <img src="./img/modal/close.svg" alt="" class="modal_rect_close" />
+            <p class="modal_rect_tittle">Settings</p>
+
+            <div class="modal_setting_rect_main">
+              <div class="modal_setting_rect_main_up">
+                <a href="" class="modal_setting_rect_main_up_avatar"
+                  ><img id="avatar" src="./img/modal/setting_avatar.svg" alt=""
+                /></a>
+                <div class="modal_setting_rect_main_up_texts">
+                   <label
+                    for="avatarInput"
+                    id="labelAvatarInput"
+                    class="modal_setting_rect_main_up_text_tittle"
+                  >
+                    Update picture
+                    
+                  </label>
+                  <input
+                      type="file"
+                      id="avatarInput"
+                      accept=".png, .jpg, .jpeg"
+                      style="display: none"
+                    />
+                  <p class="modal_setting_rect_main_up_text_text">
+                    Max size: 512KB. Upload only .png and .jpg photos
+                  </p>
+                </div>
+              </div>
+              <p
+                id="avatarInputError"
+                class="modal_setting_rect_main_up_text_error"
+              >
+                Please upload a file
+              </p>
+              <div class="modal_setting_rect_main_blocks">
+                <div class="modal_rect_block">
+                  <div class="modal_rect_block_content">
+                    <p class="modal_rect_block_tittle">Username</p>
+                    <input
+                      type="text"
+                      placeholder="Clore"
+                      value=""
+                      id="settingsLoginInput"
+                      class="modal_rect_block_input"
+                    />
+                    <img
+                      src="./img/modal/setting_edit.svg"
+                      alt=""
+                      class="modal_rect_block_eyes"
+                    />
+                  </div>
+                </div>
+                <div class="modal_rect_block">
+                  <div class="modal_rect_block_content">
+                    <p class="modal_rect_block_tittle">E-mail</p>
+                    <input
+                      type="text"
+                      id="settingsEmailInput"
+                      placeholder="example@clore.com"
+                      value=""
+                      class="modal_rect_block_input"
+                    />
+                    <img
+                      src="./img/modal/setting_edit.svg"
+                      alt=""
+                      class="modal_rect_block_eyes"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal_setting_rect_main_bottom">
+                <div class="modal_setting_rect_main_bottom_blocks">
+                  <p class="modal_setting_rect_main_bottom_tittle">
+                    Change password
+                  </p>
+                  <div class="modal_rect_block">
+                    <div class="modal_rect_block_content">
+                      <p class="modal_rect_block_tittle">Your password</p>
+                      <input
+                        type="password"
+                        id="currentPasswordInput"
+                        placeholder="*************"
+                        class="modal_rect_block_input modal_input_pass"
+                      />
+                      <img
+                        src="./img/modal/yeyes.svg"
+                        alt=""
+                        class="modal_rect_block_eyes"
+                      />
+                    </div>
+                  </div>
+                  <div class="modal_rect_block">
+                    <div class="modal_rect_block_content">
+                      <p class="modal_rect_block_tittle">New Password</p>
+                      <input
+                        type="password"
+                        id="newPasswordInput"
+                        placeholder="*************"
+                        class="modal_rect_block_input modal_input_pass2"
+                        id="modal_input_check"
+                      />
+                      <img
+                        src="./img/modal/setting_check.svg"
+                        alt=""
+                        class="modal_setting_rect_main_block_accept"
+                        id="modal_img_check"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <p class="error_text_custom" id="error_profile_text">
+                  Invalid Error
+                </p>
+                <div
+                  id="saveButton"
+                  class="modal_setting_rect_main_bottom_buttons"
+                >
+                  <button class="modal_setting_rect_main_bottom_button">
+                    Save
+                  </button>
+                  <button
+                    class="modal_setting_rect_main_bottom_button open-modal"
+                    data-modal_login="#modal_delete"
+                  >
+                    Delete Account
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-container">
+      <header class="header">
+        <div class="header__container container">
+          <a href="/" class="header__logo"
+            ><img src="img/logo.svg" width="94" height="28" alt=""
+          /></a>
+          <nav class="header__nav nav">
+            <ul class="header__menu menu list-reset">
+              <li class="menu__item">
+                <a href="index" class="menu__link">Home</a>
+              </li>
+              <li class="menu__item">
+                <a href="blog" class="menu__link">Blog</a>
+              </li>
+              <li class="menu__item">
+                <a href="download" class="menu__link">Download</a>
+              </li>
+
+              <li class="menu__item">
+                <a href="services" class="menu__link">Services</a>
+              </li>
+              <li class="menu__item">
+                <a href="pricing" class="menu__link">Pricing</a>
+              </li>
+
+              <li class="menu__item">
+                <a
+                  href="https://x.com/OtoxApp"
+                  target="_blank"
+                  class="menu__link"
+                  >Twitter</a
+                >
+              </li>
+              <li class="menu__item">
+                <a
+                  href="https://medium.com/@otox"
+                  target="_blank"
+                  class="menu__link"
+                  >Medium</a
+                >
+              </li>
+              <div class="pricing_buttons">
+                <button
+                  class="pricing_button open-modal"
+                  data-modal_login="#modal_login"
+                >
+                  Log In
+                </button>
+                <button
+                  class="pricing_button open-modal"
+                  data-modal_login="#modal_registration"
+                >
+                  Start for free
+                </button>
+              </div>
+            </ul>
+          </nav>
+          <div class="pricing_buttons">
+            <button
+              class="pricing_button open-modal"
+              data-modal_login="#modal_login"
+            >
+              Log In
+            </button>
+            <button
+              class="pricing_button open-modal"
+              data-modal_login="#modal_registration"
+            >
+              Start for free
+            </button>
+          </div>
+
+          <div class="pricing_avtoriz_main">
+            <p class="pricing_avtoriz_user">
+              <img
+                src="./img/header_avtoriz/avtoriz_user.svg"
+                alt=""
+                class="pricing_avtoriz_user_icon"
+              />
+              <span id="login_2"> Morphism </span>
+
+              <img
+                class="pricing_avtoriz_user_arrow"
+                src="./img/header_avtoriz/avtoriz_arrow.svg"
+                alt=""
+              />
+            </p>
+            <div class="pricing_avtoriz_menu">
+              <div class="pricing_avtoriz_menu_content">
+                <div class="pricing_avtoriz_menu_up">
+                  <p class="pricing_avtoriz_menu_up_tittle" id="login">
+                    <img
+                      src="./img/header_avtoriz/avtoriz_user.svg"
+                      alt=""
+                    />Morhism
+                  </p>
+                  <p class="pricing_avtoriz_menu_up_mail" id="email">
+                    example@morphism.pro
+                  </p>
+                </div>
+                <ul class="pricing_avtoriz_menu_items">
+                  <li
+                    class="pricing_avtoriz_menu_item open-modal"
+                    data-modal_setting="#modal_setting"
+                  >
+                    <img
+                      src="./img/header_avtoriz/avtoriz_setting.svg"
+                      alt=""
+                    />Settings
+                  </li>
+                  <li
+                    class="pricing_avtoriz_menu_item open-modal"
+                    data-modal-connect
+                  >
+                    <img
+                      src="./img/header_avtoriz/avtoriz_join.svg"
+                      alt=""
+                    />Join Call
+                  </li>
+                  <li class="pricing_avtoriz_menu_item" data-modal>
+                    <img
+                      src="./img/header_avtoriz/avtoriz_create.svg"
+                      alt=""
+                    />Create room
+                  </li>
+                  <li class="pricing_avtoriz_menu_item" id="button_logout">
+                    <img
+                      src="./img/header_avtoriz/avtoriz_logout.svg"
+                      alt=""
+                    />Log Out
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <button class="header__burger burger btn-reset" type="button">
+            <span class="burger__line"></span>
+          </button>
+        </div>
+      </header>
+      <main class="main">
+        <section class="about download">
+          <div class="about__inner">
+            <div class="about__container container">
+              <div class="about__info">
+                <h1 class="about__title">
+                  Innovative Otox Application for Efficient Online Conferences
+                </h1>
+                <div class="download-block">
+                  <span>Otox soon on</span>
+                  <img src="img/play.svg" width="40" height="40" alt="" />
+                  <span>and</span>
+                  <img src="img/app.svg" width="40" height="40" alt="" />
+                </div>
+                <div class="about__buttons">
+                  <button
+                    id="index_button_join"
+                    class="about__join btn btn-reset"
+                    data-modal-connect
+                    type="button"
+                  >
+                    Join meeting
+                  </button>
+                  <button
+                    id="index_button_create"
+                    style="position: relative"
+                    class="hero__btn btn-reset btn"
+                    type="button"
+                    data-modal=""
+                  >
+                    Create room
+                    <img
+                      style="position: absolute; top: -10px; right: -10px"
+                      src="./img/pricing/pricing_lightning.svg"
+                      alt=""
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="discover">
+          <div class="discover__container container">
+            <h2 class="discover__title">
+              Discover our impressive array of certifications
+            </h2>
+            <div class="discover__items">
+              <div class="discover-card">
+                <div class="discover-card__images">
+                  <div class="discover-card__image">
+                    <img
+                      src="img/dicover-1.png"
+                      width="150"
+                      height="150"
+                      alt=""
+                    />
+                  </div>
+                  <div class="discover-card__image">
+                    <img
+                      src="img/dicover-2.png"
+                      width="150"
+                      height="150"
+                      alt=""
+                    />
+                  </div>
+                  <div class="discover-card__image">
+                    <img
+                      src="img/dicover-3.png"
+                      width="150"
+                      height="150"
+                      alt=""
+                    />
+                  </div>
+                  <div class="discover-card__image">
+                    <img
+                      src="img/dicover-4.png"
+                      width="150"
+                      height="150"
+                      alt=""
+                    />
+                  </div>
+                  <div class="discover-card__image">
+                    <img
+                      src="img/dicover-5.png"
+                      width="150"
+                      height="150"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <h3 class="discover-card__desc">
+                  Unlock your potential: explore our exclusive benefits today!
+                </h3>
+              </div>
+              <div class="discover-card discover-card-animation">
+                <div class="discover-card__images">
+                  <div class="discover-card__image">
+                    <img
+                      src="img/dicover-6.png"
+                      width="150"
+                      height="150"
+                      alt=""
+                    />
+                  </div>
+                  <div class="discover-card__image">
+                    <img
+                      src="img/dicover-7.png"
+                      width="150"
+                      height="150"
+                      alt=""
+                    />
+                  </div>
+                  <div class="discover-card__image">
+                    <img
+                      src="img/dicover-8.png"
+                      width="150"
+                      height="150"
+                      alt=""
+                    />
+                  </div>
+                  <div class="discover-card__image">
+                    <img
+                      src="img/dicover-9.png"
+                      width="150"
+                      height="150"
+                      alt=""
+                    />
+                  </div>
+                  <div class="discover-card__image">
+                    <img
+                      src="img/dicover-10.png"
+                      width="150"
+                      height="150"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <h3 class="discover-card__desc">
+                  Unleash your potential with our exclusive benefits: explore
+                  now!
+                </h3>
+              </div>
+            </div>
+            <div class="discover__images" data-aos="fade-up">
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/deel.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/whereby.svg"
+                  width="96"
+                  height="17"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/raycast.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/776.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/daily.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/nala.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/parker.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/jitsu.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/fella.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/medusa.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/okteto.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/vercel.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/supabase.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/ossc.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/mui.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/os-initiative.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/ping.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+              <div class="discover-image">
+                <img
+                  draggable="false"
+                  src="img/tandem.svg"
+                  width="96"
+                  height="64"
+                  alt=""
+                />
+              </div>
+            </div>
+            <p class="discover__desc">
+              Otox: Connect beyond borders, communicate beyond words.
+            </p>
+            <a href="about" class="discover__btn btn">About Us</a>
+          </div>
+        </section>
+        <section class="explore" data-aos="fade-up">
+          <div class="explore__inner">
+            <div class="explore__container container">
+              <h2 class="explore__title">
+                Explore endless possibilities with over 90 applications on your
+                virtual desktop
+              </h2>
+              <div class="explore__items">
+                <div class="explore-image">
+                  <img
+                    src="img/logos/MailChimp.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Outreach.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/ActiveCampaign.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/SurveyMonkey.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Lemist.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Databricks.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Calendly.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Intercom.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Sendgrid.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img src="img/logos/Zoom.svg" width="64" height="64" alt="" />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Abode.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Attentive.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Slack.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Sketh.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Airtable.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Basecamp.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Evernote.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/ClickUp.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Figma.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Notion.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Asana.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Toast.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Plaid.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Square.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img src="img/logos/Miro.svg" width="64" height="64" alt="" />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Marketo.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Stripe.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img src="img/logos/Wise.svg" width="64" height="64" alt="" />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Atlassian.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Oracle.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Microsoft.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/Github.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+                <div class="explore-image">
+                  <img
+                    src="img/logos/WebFlow.svg"
+                    width="64"
+                    height="64"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <p class="explore__desc">
+                Innovative real-time video conferencing with screen protection
+                and privacy. Creating a virtual space with unique features.
+              </p>
+              <button
+                class="explore__join btn-reset btn"
+                type="button"
+                data-modal-connect
+              >
+                Join Meeting
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="various">
+          <div class="various__container container">
+            <h2 class="various__title">Various application integrations</h2>
+            <div class="various-block">
+              <div class="various-block__top">
+                <img
+                  src="img/various-1.svg"
+                  draggable="false"
+                  width="50"
+                  height="50"
+                  alt=""
+                />
+                <img
+                  src="img/various-2.svg"
+                  draggable="false"
+                  width="170"
+                  height="170"
+                  alt=""
+                />
+                <img
+                  src="img/various-3.svg"
+                  draggable="false"
+                  width="150"
+                  height="150"
+                  alt=""
+                />
+                <img
+                  src="img/various-4.svg"
+                  draggable="false"
+                  width="140"
+                  height="140"
+                  alt=""
+                />
+                <img
+                  src="img/various-5.svg"
+                  draggable="false"
+                  width="200"
+                  height="200"
+                  alt=""
+                />
+                <img
+                  src="img/various-6.svg"
+                  draggable="false"
+                  width="150"
+                  height="150"
+                  alt=""
+                />
+              </div>
+              <div class="various-block__bottom">
+                <div class="various-block__text">
+                  <h3>90+ Apps</h3>
+                  <p>Various application integrations</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="explore" data-aos="fade-up">
+          <div class="explore__inner">
+            <div class="explore__container container">
+              <h2 class="explore__title">
+                Our application is <br />available for Windows
+                <img src="img/windows.svg" width="24" height="24" alt="" /> and
+                macOS <img src="img/mac.svg" width="24" height="24" alt="" /> а
+                operating systems, providing ease of use on various computers.
+              </h2>
+              <p class="explore__desc">
+                We are also working on expanding the functionality for mobile
+                devices to provide users with even more features in the future.
+              </p>
+              <button
+                class="explore__join btn-reset btn"
+                data-modal-connect
+                type="button"
+              >
+                Join Meeting
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="news" data-aos="fade-up">
+          <div class="news__container container">
+            <h2 class="news__title">Blog and news</h2>
+            <div class="blog__items">
+              <div class="blog-card">
+                <div class="blog-card__image">
+                  <img src="img/blog-1.png" width="276" height="182" alt="" />
+                </div>
+                <h3 class="blog-card__title">
+                  Otox: Pioneering Advanced Security in Digital Communication
+                </h3>
+                <a href="post-1" target="_blank" class="blog-card__link btn"
+                  >Read All</a
+                >
+              </div>
+              <div class="blog-card">
+                <div class="blog-card__image">
+                  <img src="img/blog-2.png" width="276" height="182" alt="" />
+                </div>
+                <h3 class="blog-card__title">
+                  Otox: Earning the Trust of IT Experts in Digital Communication
+                </h3>
+                <a href="post-2" target="_blank" class="blog-card__link btn"
+                  >Read All</a
+                >
+              </div>
+              <div class="blog-card">
+                <div class="blog-card__image">
+                  <img src="img/blog-3.png" width="276" height="182" alt="" />
+                </div>
+                <h3 class="blog-card__title">
+                  Revolutionizing Communication, Advanced AI Translation
+                  Technology
+                </h3>
+                <a href="post-3" target="_blank" class="blog-card__link btn"
+                  >Read All</a
+                >
+              </div>
+              <div class="blog-card">
+                <div class="blog-card__image">
+                  <img src="img/blog-4.png" width="276" height="182" alt="" />
+                </div>
+                <h3 class="blog-card__title">
+                  The Future of Video Conferencing: A New Era with Otox
+                </h3>
+                <a href="post-4" target="_blank" class="blog-card__link btn"
+                  >Read All</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer__container container">
+          <div class="footer__left">
+            <a href="/" class="header__logo"
+              ><img src="img/logo.svg" width="94" height="28" alt="" /> </a
+            ><a href="services" class="footer__btn btn">Services</a>
+          </div>
+          <nav class="nav">
+            <ul class="menu list-reset">
+              <li class="menu__item">
+                <a href="/" class="menu__link">Home</a>
+              </li>
+              <li class="menu__item">
+                <a href="blog" class="menu__link">Blog</a>
+              </li>
+              <li class="menu__item">
+                <a href="download" class="menu__link">Download</a>
+              </li>
+              <li class="menu__item">
+                <a
+                  href="https://x.com/OtoxApp"
+                  target="_blank"
+                  class="menu__link"
+                  >Twitter (X)</a
+                >
+              </li>
+              <li class="menu__item">
+                <a
+                  href="https://medium.com/@otox"
+                  target="_blank"
+                  class="menu__link"
+                  >Medium</a
+                >
+              </li>
+              <li class="menu__item">
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  class="menu__link"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li class="menu__item">
+                <a
+                  href="https://policies.google.com/terms"
+                  target="_blank"
+                  class="menu__link"
+                  >Terms of Service</a
+                >
+              </li>
+              <!-- <li class="menu__item">
+          <a href="about" class="menu__link">About</a>
+        </li> -->
+            </ul>
+          </nav>
+          <a href="pricing" class="header__btn btn">Plans</a>
+        </div>
+      </footer>
+      <div class="modal">
+        <div class="modal__inner">
+          <form action="" class="modal-form">
+            <div class="modal-form__step active" data-step="0">
+              <h3 class="modal-form__title">Discovery Call</h3>
+              <p class="modal-form__desc">Choose date and time.</p>
+              <div id="color-calendar"></div>
+            </div>
+            <div class="modal-form__step" data-step="1">
+              <h3 class="modal-form__title">Tuesday, February 13</h3>
+              <p class="modal-form__desc">Choose date and time.</p>
+              <div class="modal-form__times-wrapper">
+                <div class="modal-form__times">
+                  <div class="modal-form__times-inner">
+                    <button class="modal-form__time btn-reset" type="button">
+                      12:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      12:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      1:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      1:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      2:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      2:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      3:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      3:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      4:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      4:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      5:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      5:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      6:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      6:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      7:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      7:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      8:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      8:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      9:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      9:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      10:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      10:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      11:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      11:30 am
+                    </button>
+                  </div>
+                  <div class="modal-form__times-inner">
+                    <button class="modal-form__time btn-reset" type="button">
+                      12:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      12:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      1:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      1:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      2:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      2:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      3:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      3:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      4:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      4:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      5:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      5:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      6:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      6:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      7:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      7:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      8:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      8:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      9:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      9:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      10:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      10:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      11:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      11:30 pm
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-form__step" data-step="2">
+              <h3 class="modal-form__title">Tuesday, February 13</h3>
+              <p class="modal-form__desc">Choose date and time.</p>
+              <div class="modal-form__copy">
+                <div class="left">
+                  <span class="modal-form__label"
+                    >Сopy room ID to search in app</span
+                  >
+                  <p class="modal-form__room">Content</p>
+                </div>
+                <button class="modal-form__copy-btn btn-reset" type="button">
+                  <img src="img/copy.svg" width="20" height="20" alt="" />
+                </button>
+              </div>
+            </div>
+            <div class="modal-form__buttons">
+              <button class="modal-form__next btn-reset" type="button">
+                Go select time
+              </button>
+              <button class="modal-form__prev btn-reset" type="button">
+                Cancel
+              </button>
+              <a href="" class="modal-form__link"></a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="callback">
+        <div class="callback__inner">
+          <form action="" class="callback-form">
+            <h3 class="modal-form__title">Contact us</h3>
+            <p class="callback-form__desc">Presentation</p>
+            <div class="modal-form__copy">
+              <div class="left">
+                <span class="modal-form__label">Enter your email</span>
+                <input type="email" placeholder="Content" />
+              </div>
+            </div>
+            <div class="modal-form__copy callback-form__input">
+              <div class="left">
+                <span class="modal-form__label">Enter your comment</span>
+                <input type="text" placeholder="Content" />
+              </div>
+            </div>
+            <div class="callback-form__submit modal-form__buttons">
+              <button class="modal-form__next btn-reset" type="submit">
+                Submit
+              </button>
+              <button
+                class="callback-form__close modal-form__prev btn-reset"
+                type="button"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="connect">
+        <div class="modal__inner">
+          <form action="" class="modal-form" id="modal_room_connection">
+            <h3 class="modal-form__title">Room Connection</h3>
+            <div class="modal-form__copy">
+              <div class="left">
+                <span class="modal-form__label">Enter room ID to connect</span>
+                <input type="text" id="id_input" placeholder="Content" />
+              </div>
+            </div>
+            <p class="modal-form__error" id="id_error">
+              Please enter a valid room ID
+            </p>
+            <style>
+              
+            </style>
+            <div class="modal-form__buttons">
+              <button
+                id="connect_submit"
+                class="modal-form__next btn-reset non-active"
+                type="button"
+              >
+                Connect
+              </button>
+              <button
+                class="connect__cancel modal-form__prev btn-reset"
+                type="button"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="fav.ico" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#111111" />
+    <title>Otox</title>
+    <link
+      rel="preload"
+      href="fonts/SFProText-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/SFProText-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/SFNSCondensed-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/SFNSCondensed-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/SFNSCondensed-Heavy.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/Inter-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/pricing.css" />
+    <script defer="defer" src="js/main.js"></script>
+    <script src="js/jquery-3.6.3.js"></script>
+    <script defer="defer" src="js/api.js"></script> <script defer="defer" src="js/pricing_js.js"></script>
+    <!-- Smartsupp Live Chat script -->
+    <script type="text/javascript">
+      var _smartsupp = _smartsupp || {};
+      _smartsupp.key = "ffde4136b9b1b8b8a816964811e3264b90470878";
+      window.smartsupp ||
+        (function (d) {
+          var s,
+            c,
+            o = (smartsupp = function () {
+              o._.push(arguments);
+            });
+          o._ = [];
+          s = d.getElementsByTagName("script")[0];
+          c = d.createElement("script");
+          c.type = "text/javascript";
+          c.charset = "utf-8";
+          c.async = true;
+          c.src = "https://www.smartsuppchat.com/loader.js?";
+          s.parentNode.insertBefore(c, s);
+        })(document);
+    </script>
+  </head>
+  <body class="page__body">
+    <!-- ЕСЛИ ЧЕЛОВЕК АВТОРИЗОВАЛСЯ ТО ДОБАВЛЯЕТСЯ К BODY класс avtoriz -->
+
+    <!-- 
+    ДЛЯ ВЫСВЕИВАНИЯ ОШИБКИ ДОБАВЛЯМ КЛАСС .modal_login_failed К modal_login  -->
+
+    <div class="modal_new" id="modal_login">
+      <div class="modal_overlay">
+        <div class="modal_rect modal_login">
+          <div class="modal_rect_content">
+            <img src="./img/modal/close.svg" alt="" class="modal_rect_close" />
+            <p class="modal_rect_tittle">Log In</p>
+            <p class="modal_rect_subtittle">Login to your account</p>
+            <div class="modal_rect_blocks">
+              <div class="modal_rect_block">
+                <div class="modal_rect_block_content">
+                  <p class="modal_rect_block_tittle">E-mail</p>
+                  <input
+                    type="text"
+                    placeholder="example@clore.com"
+                    class="modal_rect_block_input"
+                  />
+                </div>
+              </div>
+              <div class="modal_rect_block">
+                <div class="modal_rect_block_content">
+                  <p class="modal_rect_block_tittle">Password</p>
+                  <input
+                    type="password"
+                    placeholder="*************"
+                    class="modal_rect_block_input modal_input_pass"
+                  />
+                  <img
+                    src="./img/modal/yeyes.svg"
+                    alt=""
+                    class="modal_rect_block_eyes"
+                  />
+                </div>
+              </div>
+            </div>
+            <p class="modal_rect_bottom_text_error">
+              Incorrect password or email
+            </p>
+            <p class="modal_rect_bottom_text">
+              Don’t have account?
+              <span class="open-modal" data-modal_login="#modal_registration"
+                >Register</span
+              >
+            </p>
+            <button class="modal_rect_bottom_button">Log In</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal_new" id="modal_registration">
+      <div class="modal_overlay">
+        <div class="modal_rect modal_registration">
+          <div class="modal_rect_content">
+            <img src="./img/modal/close.svg" alt="" class="modal_rect_close" />
+            <p class="modal_rect_tittle">Registration</p>
+            <p class="modal_rect_subtittle">Create new account</p>
+            <div class="modal_rect_blocks">
+              <div class="modal_rect_block">
+                <div class="modal_rect_block_content">
+                  <p class="modal_rect_block_tittle">Username</p>
+                  <input
+                    type="text"
+                    placeholder="Clore"
+                    class="modal_rect_block_input"
+                  />
+                </div>
+              </div>
+              <div class="modal_rect_block">
+                <div class="modal_rect_block_content">
+                  <p class="modal_rect_block_tittle">E-mail</p>
+                  <input
+                    type="text"
+                    placeholder="example@clore.com"
+                    class="modal_rect_block_input"
+                  />
+                </div>
+              </div>
+              <div class="modal_rect_block">
+                <div class="modal_rect_block_content">
+                  <p class="modal_rect_block_tittle">Password</p>
+                  <input
+                    type="password"
+                    placeholder="*************"
+                    class="modal_rect_block_input modal_input_pass"
+                  />
+                  <img
+                    src="./img/modal/yeyes.svg"
+                    alt=""
+                    class="modal_rect_block_eyes"
+                  />
+                </div>
+              </div>
+              <div class="modal_rect_block">
+                <div class="modal_rect_block_content">
+                  <p class="modal_rect_block_tittle">Repeat Password</p>
+                  <input
+                    type="password"
+                    placeholder="*************"
+                    class="modal_rect_block_input modal_input_pass2"
+                  />
+                  <img
+                    src="./img/modal/yeyes.svg"
+                    alt=""
+                    class="modal_rect_block_eyes modal_rect_block_eyes2"
+                  />
+                </div>
+              </div>
+             <p class="modal_rect_bottom_text_error">
+                Incorrect password or email
+              </p><p class="modal_rect_bottom_text_success">
+                 You have successfully registered
+              </p>
+              <p class="modal_rect_bottom_text">
+                Already have account?
+                <span class="open-modal" data-modal_login="#modal_login"
+                  >Log In</span
+                >
+              </p>
+              <button class="modal_rect_bottom_button">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal_new" id="modal_join">
+      <div class="modal_overlay">
+        <div class="modal_rect modal_join">
+          <div class="modal_rect_content">
+            <img src="./img/modal/close.svg" alt="" class="modal_rect_close" />
+            <p class="modal_rect_tittle">Joining the сall</p>
+            <p class="modal_rect_subtittle">Open the Otox app</p>
+            <div class="modal_join_items">
+              <p class="modal_join_item">
+                Click <span>“Open Otox app”</span> in the dialog box in your
+                browser
+              </p>
+              <p class="modal_join_item">
+                If the dialog box does not appear, make sure you have the
+                <a href="">Otox app </a> installed and click
+                <span>"Start"</span> a conference below.
+              </p>
+              <p class="modal_join_item">
+                Don't have the Otox app yet?
+                <a id="join-download-link" download href="./fav.ico"
+                  >Download now</a
+                >
+              </p>
+              <p id="message"></p>
+            </div>
+            <button class="modal_join_button">Start</button>
+            <p class="modal_join_bottom">
+              By joining the meeting, you agree to the
+              <a href="">Terms of Service </a> and <a href="">Privacy Policy</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal_new" id="modal_delete">
+      <div class="modal_overlay">
+        <div class="modal_rect modal_delete">
+          <div class="modal_rect_content">
+            <img src="./img/modal/close.svg" alt="" class="modal_rect_close" />
+            <p class="modal_rect_tittle">Delete account</p>
+            <p class="modal_rect_subtittle">
+              Are you sure you want to delete your account? This action is
+              irreversible and recovery will be impossible
+            </p>
+            <div class="modal_delete_rect_button">Delete Account</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+    <div class="modal_new" id="modal_setting">
+      <div class="modal_overlay">
+        <div class="modal_rect modal_setting">
+          <div class="modal_rect_content">
+            <img src="./img/modal/close.svg" alt="" class="modal_rect_close" />
+            <p class="modal_rect_tittle">Settings</p>
+
+            <div class="modal_setting_rect_main">
+              <div class="modal_setting_rect_main_up">
+                <a href="" class="modal_setting_rect_main_up_avatar"
+                  ><img id="avatar" src="./img/modal/setting_avatar.svg" alt=""
+                /></a>
+                <div class="modal_setting_rect_main_up_texts">
+                   <label
+                    for="avatarInput"
+                    id="labelAvatarInput"
+                    class="modal_setting_rect_main_up_text_tittle"
+                  >
+                    Update picture
+                    
+                  </label>
+                  <input
+                      type="file"
+                      id="avatarInput"
+                      accept=".png, .jpg, .jpeg"
+                      style="display: none"
+                    />
+                  <p class="modal_setting_rect_main_up_text_text">
+                    Max size: 512KB. Upload only .png and .jpg photos
+                  </p>
+                </div>
+              </div>
+              <p
+                id="avatarInputError"
+                class="modal_setting_rect_main_up_text_error"
+              >
+                Please upload a file
+              </p>
+              <div class="modal_setting_rect_main_blocks">
+                <div class="modal_rect_block">
+                  <div class="modal_rect_block_content">
+                    <p class="modal_rect_block_tittle">Username</p>
+                    <input
+                      type="text"
+                      placeholder="Clore"
+                      value=""
+                      id="settingsLoginInput"
+                      class="modal_rect_block_input"
+                    />
+                    <img
+                      src="./img/modal/setting_edit.svg"
+                      alt=""
+                      class="modal_rect_block_eyes"
+                    />
+                  </div>
+                </div>
+                <div class="modal_rect_block">
+                  <div class="modal_rect_block_content">
+                    <p class="modal_rect_block_tittle">E-mail</p>
+                    <input
+                      type="text"
+                      id="settingsEmailInput"
+                      placeholder="example@clore.com"
+                      value=""
+                      class="modal_rect_block_input"
+                    />
+                    <img
+                      src="./img/modal/setting_edit.svg"
+                      alt=""
+                      class="modal_rect_block_eyes"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal_setting_rect_main_bottom">
+                <div class="modal_setting_rect_main_bottom_blocks">
+                  <p class="modal_setting_rect_main_bottom_tittle">
+                    Change password
+                  </p>
+                  <div class="modal_rect_block">
+                    <div class="modal_rect_block_content">
+                      <p class="modal_rect_block_tittle">Your password</p>
+                      <input
+                        type="password"
+                        id="currentPasswordInput"
+                        placeholder="*************"
+                        class="modal_rect_block_input modal_input_pass"
+                      />
+                      <img
+                        src="./img/modal/yeyes.svg"
+                        alt=""
+                        class="modal_rect_block_eyes"
+                      />
+                    </div>
+                  </div>
+                  <div class="modal_rect_block">
+                    <div class="modal_rect_block_content">
+                      <p class="modal_rect_block_tittle">New Password</p>
+                      <input
+                        type="password"
+                        id="newPasswordInput"
+                        placeholder="*************"
+                        class="modal_rect_block_input modal_input_pass2"
+                        id="modal_input_check"
+                      />
+                      <img
+                        src="./img/modal/setting_check.svg"
+                        alt=""
+                        class="modal_setting_rect_main_block_accept"
+                        id="modal_img_check"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <p class="error_text_custom" id="error_profile_text">
+                  Invalid Error
+                </p>
+                <div
+                  id="saveButton"
+                  class="modal_setting_rect_main_bottom_buttons"
+                >
+                  <button class="modal_setting_rect_main_bottom_button">
+                    Save
+                  </button>
+                  <button
+                    class="modal_setting_rect_main_bottom_button open-modal"
+                    data-modal_login="#modal_delete"
+                  >
+                    Delete Account
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-container">
+      <header class="header">
+        <div class="header__container container">
+          <a href="/" class="header__logo"
+            ><img src="img/logo.svg" width="94" height="28" alt=""
+          /></a>
+          <nav class="header__nav nav">
+            <ul class="header__menu menu list-reset">
+              <li class="menu__item">
+                <a href="index" class="menu__link">Home</a>
+              </li>
+              <li class="menu__item">
+                <a href="blog" class="menu__link">Blog</a>
+              </li>
+              <li class="menu__item">
+                <a href="download" class="menu__link">Download</a>
+              </li>
+
+              <li class="menu__item">
+                <a href="services" class="menu__link">Services</a>
+              </li>
+              <li class="menu__item">
+                <a href="pricing" class="menu__link">Pricing</a>
+              </li>
+
+              <li class="menu__item">
+                <a
+                  href="https://x.com/OtoxApp"
+                  target="_blank"
+                  class="menu__link"
+                  >Twitter</a
+                >
+              </li>
+              <li class="menu__item">
+                <a
+                  href="https://medium.com/@otox"
+                  target="_blank"
+                  class="menu__link"
+                  >Medium</a
+                >
+              </li>
+              <div class="pricing_buttons">
+                <button
+                  class="pricing_button open-modal"
+                  data-modal_login="#modal_login"
+                >
+                  Log In
+                </button>
+                <button
+                  class="pricing_button open-modal"
+                  data-modal_login="#modal_registration"
+                >
+                  Start for free
+                </button>
+              </div>
+            </ul>
+          </nav>
+          <div class="pricing_buttons">
+            <button
+              class="pricing_button open-modal"
+              data-modal_login="#modal_login"
+            >
+              Log In
+            </button>
+            <button
+              class="pricing_button open-modal"
+              data-modal_login="#modal_registration"
+            >
+              Start for free
+            </button>
+          </div>
+
+          <div class="pricing_avtoriz_main">
+            <p class="pricing_avtoriz_user" >
+              <img
+                src="./img/header_avtoriz/avtoriz_user.svg"
+                alt=""
+                class="pricing_avtoriz_user_icon"
+              />
+              <span id="login_2">
+                Morphism
+              </span>
+              
+              <img
+                class="pricing_avtoriz_user_arrow"
+                src="./img/header_avtoriz/avtoriz_arrow.svg"
+                alt=""
+              />
+            </p>
+            <div class="pricing_avtoriz_menu">
+              <div class="pricing_avtoriz_menu_content">
+                <div class="pricing_avtoriz_menu_up">
+                   <p class="pricing_avtoriz_menu_up_tittle" id="login">
+                    <img
+                      src="./img/header_avtoriz/avtoriz_user.svg"
+                      alt=""
+                    />Morhism
+                  </p>
+                  <p class="pricing_avtoriz_menu_up_mail" id="email">
+                    example@morphism.pro
+                  </p>
+                </div>
+                <ul class="pricing_avtoriz_menu_items">
+                  <li
+                    class="pricing_avtoriz_menu_item open-modal"
+                    data-modal_setting="#modal_setting"
+                  >
+                    <img
+                      src="./img/header_avtoriz/avtoriz_setting.svg"
+                      alt=""
+                    />Settings
+                  </li>
+                  <li
+                    class="pricing_avtoriz_menu_item open-modal"
+                    data-modal-connect
+                  >
+                    <img
+                      src="./img/header_avtoriz/avtoriz_join.svg"
+                      alt=""
+                    />Join Call
+                  </li>
+                  <li class="pricing_avtoriz_menu_item" data-modal>
+                    <img
+                      src="./img/header_avtoriz/avtoriz_create.svg"
+                      alt=""
+                    />Create room
+                  </li>
+                  <li class="pricing_avtoriz_menu_item" id="button_logout">
+                    <img
+                      src="./img/header_avtoriz/avtoriz_logout.svg"
+                      alt=""
+                    />Log Out
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <button class="header__burger burger btn-reset" type="button">
+            <span class="burger__line"></span>
+          </button>
+        </div>
+      </header>
+      <main class="main">
+        <section class="post">
+          <div class="post__container container">
+            <div class="post__inner">
+              <h1 class="post__title">
+                The Future of Video Conferencing: A New Era with Otox
+              </h1>
+              <p class="post__desc">
+                The landscape of digital communication is evolving
+                at an unprecedented pace, with video conferencing at the heart
+                of this transformation. As remote work, virtual meetings, and
+                online collaborations become the norm, the demand for more
+                efficient, secure, and user-friendly video conferencing
+                solutions is skyrocketing. Enter Otox: a pioneering platform set
+                to redefine the future of video conferencing.
+              </p>
+            </div>
+            <div class="post-banner">
+              <div class="post-banner__image">
+                <img src="img/blog-4.png" width="574" height="376" alt="" />
+              </div>
+            </div>
+            <div class="post__inner">
+              <h1 class="post__title">Innovations Driving the Future</h1>
+              <p class="post__desc">
+                Otox is at the forefront of this revolution, integrating
+                cutting-edge technologies to enhance user experience and
+                connectivity. But what does the future hold for video
+                conferencing, and how is Otox shaping this future?
+              </p>
+            </div>
+            <div class="post__inner">
+              <h2 class="post__subtitle">
+                1. Enhanced Connectivity and Accessibility
+              </h2>
+              <p class="post__desc">
+                In a world where instant, reliable communication is key, Otox
+                leverages advanced networking solutions to ensure seamless
+                connectivity across the globe. This section can explore how Otox
+                addresses common connectivity issues and uses innovative
+                technologies to provide a smoother, more accessible video
+                conferencing experience.
+              </p>
+            </div>
+            <div class="post__inner">
+              <h2 class="post__subtitle">
+                2. Unprecedented Audio and Video Quality
+              </h2>
+              <p class="post__desc">
+                With Otox, experience crystal-clear audio and high-definition
+                video that makes you feel like you’re in the same room with your
+                colleagues, friends, or family. This part can delve into the
+                technical advancements Otox utilizes to achieve superior audio
+                and video quality, setting a new standard for video conferencing
+                platforms.
+              </p>
+            </div>
+            <div class="post-block">
+              <span class="post-block__date"
+                >Salma Steuber 27 October 2023</span
+              >
+              <p class="post-block__desc">
+                Conclusion: Shaping the Future Together
+              </p>
+              <p class="post-block__subdesc">
+                The future of video conferencing is bright, with Otox leading
+                the charge towards a more connected, efficient, and high-quality
+                communication era. As we move forward, Otox remains committed
+                to innovation, continuously seeking ways to enhance the video
+                conferencing experience for users worldwide.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer__container container">
+          <div class="footer__left">
+            <a href="/" class="header__logo"
+              ><img src="img/logo.svg" width="94" height="28" alt="" /> </a
+            ><a href="services" class="footer__btn btn">Services</a>
+          </div>
+          <nav class="nav">
+            <ul class="menu list-reset">
+              <li class="menu__item">
+                <a href="/" class="menu__link">Home</a>
+              </li>
+              <li class="menu__item">
+                <a href="blog" class="menu__link">Blog</a>
+              </li>
+              <li class="menu__item">
+                <a href="download" class="menu__link">Download</a>
+              </li>
+              <li class="menu__item">
+                <a
+                  href="https://x.com/OtoxApp"
+                  target="_blank"
+                  class="menu__link"
+                  >Twitter (X)</a
+                >
+              </li>
+              <li class="menu__item">
+                <a
+                  href="https://medium.com/@otox"
+                  target="_blank"
+                  class="menu__link"
+                  >Medium</a
+                >
+              </li>
+              <li class="menu__item">
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  class="menu__link"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li class="menu__item">
+                <a
+                  href="https://policies.google.com/terms"
+                  target="_blank"
+                  class="menu__link"
+                  >Terms of Service</a
+                >
+              </li>
+              <!-- <li class="menu__item">
+          <a href="about" class="menu__link">About</a>
+        </li> -->
+            </ul>
+          </nav>
+          <a href="pricing" class="header__btn btn">Plans</a>
+        </div>
+      </footer>
+      <div class="modal">
+        <div class="modal__inner">
+          <form action="" class="modal-form">
+            <div class="modal-form__step active" data-step="0">
+              <h3 class="modal-form__title">Discovery Call</h3>
+              <p class="modal-form__desc">Choose date and time.</p>
+              <div id="color-calendar"></div>
+            </div>
+            <div class="modal-form__step" data-step="1">
+              <h3 class="modal-form__title">Tuesday, February 13</h3>
+              <p class="modal-form__desc">Choose date and time.</p>
+              <div class="modal-form__times-wrapper">
+                <div class="modal-form__times">
+                  <div class="modal-form__times-inner">
+                    <button class="modal-form__time btn-reset" type="button">
+                      12:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      12:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      1:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      1:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      2:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      2:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      3:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      3:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      4:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      4:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      5:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      5:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      6:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      6:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      7:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      7:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      8:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      8:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      9:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      9:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      10:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      10:30 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      11:00 am
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      11:30 am
+                    </button>
+                  </div>
+                  <div class="modal-form__times-inner">
+                    <button class="modal-form__time btn-reset" type="button">
+                      12:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      12:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      1:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      1:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      2:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      2:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      3:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      3:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      4:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      4:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      5:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      5:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      6:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      6:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      7:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      7:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      8:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      8:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      9:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      9:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      10:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      10:30 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      11:00 pm
+                    </button>
+                    <button class="modal-form__time btn-reset" type="button">
+                      11:30 pm
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-form__step" data-step="2">
+              <h3 class="modal-form__title">Tuesday, February 13</h3>
+              <p class="modal-form__desc">Choose date and time.</p>
+              <div class="modal-form__copy">
+                <div class="left">
+                  <span class="modal-form__label"
+                    >Сopy room ID to search in app</span
+                  >
+                  <p class="modal-form__room">Content</p>
+                </div>
+                <button class="modal-form__copy-btn btn-reset" type="button">
+                  <img src="img/copy.svg" width="20" height="20" alt="" />
+                </button>
+              </div>
+            </div>
+            <div class="modal-form__buttons">
+              <button class="modal-form__next btn-reset" type="button">
+                Go select time
+              </button>
+              <button class="modal-form__prev btn-reset" type="button">
+                Cancel
+              </button>
+              <a href="" class="modal-form__link"></a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="callback">
+        <div class="callback__inner">
+          <form action="" class="callback-form">
+            <h3 class="modal-form__title">Contact us</h3>
+            <p class="callback-form__desc">Presentation</p>
+            <div class="modal-form__copy">
+              <div class="left">
+                <span class="modal-form__label">Enter your email</span>
+                <input type="email" placeholder="Content" />
+              </div>
+            </div>
+            <div class="modal-form__copy callback-form__input">
+              <div class="left">
+                <span class="modal-form__label">Enter your comment</span>
+                <input type="text" placeholder="Content" />
+              </div>
+            </div>
+            <div class="callback-form__submit modal-form__buttons">
+              <button class="modal-form__next btn-reset" type="submit">
+                Submit
+              </button>
+              <button
+                class="callback-form__close modal-form__prev btn-reset"
+                type="button"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+<div class="connect">
+  <div class="modal__inner">
+    <form action="" class="modal-form" id="modal_room_connection">
+      <h3 class="modal-form__title">Room Connection</h3>
+      <div class="modal-form__copy">
+        <div class="left">
+          <span class="modal-form__label">Enter room ID to connect</span>
+          <input type="text" id="id_input" placeholder="Content" />
+        </div>
+      </div>
+      <p class="modal-form__error" id="id_error">
+        Please enter a valid room ID
+      </p>
+      <style>
+        
+      </style>
+      <div class="modal-form__buttons">
+        <button
+          id="connect_submit"
+          class="modal-form__next btn-reset non-active"
+          type="button"
+        >
+          Connect
+        </button>
+        <button
+          class="connect__cancel modal-form__prev btn-reset"
+          type="button"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
