@@ -378,10 +378,10 @@ $(document).ready(function () {
     if (currentPassword) {
       if (currentPassword == getFromLocalStorage("password")) {
         if (newPassword) {
-          data.password = newPassword; // Отправляем новый пароль
-      }
-      else{
-       $("#error_profile_text").text("Password is incorrect").show();
+          data.password = newPassword;
+        }
+      } else {
+        $("#error_profile_text").text("Password is incorrect").show();
       }
     }
     console.log(avatarFile);
