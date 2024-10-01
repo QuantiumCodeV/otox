@@ -121,7 +121,7 @@ async function updateProfile(data) {
   const result = await response.json();
   console.log(result);
   if (response.ok) {
-    //window.location.reload();
+    window.location.reload();
   } else {
     $("#error_profile_text").text(result.error).show();
   }
