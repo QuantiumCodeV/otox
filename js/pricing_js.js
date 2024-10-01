@@ -28,13 +28,14 @@ $(document).ready(function () {
 
   if (accessToken) {
     // Если токен существует, пользователь авторизован
-    $("body").addClass("avtoriz"); // Добавляем класс 'avtoriz' к body
+    // Добавляем класс 'avtoriz' к body
 
     (async function () {
       var profile = await getProfile(); // Ждем, пока получим данные профиля
       console.log(profile);
 
       if (profile) {
+        $("body").addClass("avtoriz"); 
         $("#email").text(profile.email);
         $("#login").text(profile.username);
         $("#login_2").text(profile.username);
