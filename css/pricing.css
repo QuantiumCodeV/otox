@@ -429,8 +429,8 @@ p {
   letter-spacing: -0.32px;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
   width: 100%;
-  
 }
 .pricing_avtoriz_menu_up_tittle img {
   vertical-align: middle;
