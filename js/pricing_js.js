@@ -337,7 +337,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   // Обработка нажатия на кнопку "Save"
-  $("#saveButton").on("click", async function () {
+  $("#saveButton > button:first-child").on("click", async function () {
     const email = $("#settingsEmailInput").val();
     const username = $("#settingsLoginInput").val();
     const currentPassword = $("#currentPasswordInput").val();
