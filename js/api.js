@@ -22,7 +22,7 @@ async function registerUser(username, email, password) {
     ? { username, email, password, code }
     : { username, email, password };
   console.log(requestBody);
-  console.log(code);       
+  console.log(code);
   const response = await fetch(`${backendDomain}/otox/register/`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -38,6 +38,11 @@ async function registerUser(username, email, password) {
     );
     loginUser(username, password);
   } else {
+    if (result.error == "Password is too short") {
+      $("#modal_registration .modal_rect_block").eq(2).addClass("error");
+      $("#modal_registration .modal_rect_block").eq(3).addClass("error");
+    }
+
     showErrorMessage(
       result.error || "Registration error",
       "#modal_registration .modal_rect_bottom_text_error",

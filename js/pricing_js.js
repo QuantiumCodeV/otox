@@ -40,7 +40,9 @@ $(document).ready(function () {
         $("#login_2").text(profile.username);
         $("#settingsLoginInput").val(profile.username);
         $("#settingsEmailInput").val(profile.email);
-        $("#avatar").attr("src", "data:image/png;base64, " + profile.avatar);
+        if (profile.avatar) {
+          $("#avatar").attr("src", "data:image/png;base64, " + profile.avatar);
+        }
       } else {
         console.error("Не удалось получить профиль");
         loginUser(
@@ -127,7 +129,7 @@ $(document).ready(function () {
 
     if (password !== repeatPassword) {
       console.log("password !== repeatPassword");
-      $("#modal_registration .modal_rect_block").eq(2).addClass("erfror");
+      $("#modal_registration .modal_rect_block").eq(2).addClass("error");
       $("#modal_registration .modal_rect_block").eq(3).addClass("error");
       showErrorMessage(
         "Passwords do not match.",
