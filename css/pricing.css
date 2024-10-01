@@ -427,6 +427,10 @@ p {
   font-weight: 600;
   line-height: 140%; /* 22.4px */
   letter-spacing: -0.32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  
 }
 .pricing_avtoriz_menu_up_tittle img {
   vertical-align: middle;
